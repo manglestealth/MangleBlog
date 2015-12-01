@@ -22,11 +22,17 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('admin','AdminController@index');
 
-Route::get('writeArticle','AdminController@write');
+//Route::group(['middleware'=>'admin','prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin'],function(){
 
-Route::post('write',function(){
-   echo "<pre>";
-    print_r($_POST);
+    Route::get('index','AdminController@index');
+
+    Route::resource('article','ArticleController');
 });
+
+
+Route::get('post/{id}','BlogController@post')->where(['id'=>'[0-9]+']);
+
+
+Route::get('list/{id?}','BlogController@index')->where(['id'=>'[0-9]+']);

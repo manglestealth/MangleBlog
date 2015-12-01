@@ -12,14 +12,11 @@ class CreateContentsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('contents', function(Blueprint $table)
-        {
-            $table->engine = 'InnoDB';
-            $table->increments('id');
-            $table->integer('aid');
-            $table->longText('content');
-
-        });
+		Schema::create('contents', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->timestamps();
+		});
 	}
 
 	/**
@@ -29,7 +26,7 @@ class CreateContentsTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('contents');
+		Schema::drop('contents');
 	}
 
 }

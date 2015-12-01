@@ -9,12 +9,16 @@
 namespace App\Http\Controllers;
 
 
+use App\Category;
+use Illuminate\Support\Facades\Cache;
+
 class AdminController extends Controller{
    public function index(){
+
        return view('admin.index.index');
    }
 
     public function write(){
-        return view('admin.article.write');
+
     }
 } 

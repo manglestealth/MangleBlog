@@ -13,8 +13,8 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
-
+//	'debug' => env('APP_DEBUG'),
+    'debug' => true,
 	/*
 	|--------------------------------------------------------------------------
 	| Application URL
@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Asia/Shanghai',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -144,8 +144,12 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'App\Providers\PaginationProvider',
+        'App\Providers\ComposerServiceProvider',
 
-	],
+
+
+    ],
 
 	/*
 	|--------------------------------------------------------------------------
